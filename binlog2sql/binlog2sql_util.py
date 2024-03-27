@@ -246,7 +246,7 @@ def reversed_lines(fin):
     part = ''
     for block in reversed_blocks(fin):
         if PY3PLUS:
-            block = block.decode("utf-8")
+            block = block.decode("utf-8", "ignore")
         for c in reversed(block):
             if c == '\n' and part:
                 yield part[::-1]
